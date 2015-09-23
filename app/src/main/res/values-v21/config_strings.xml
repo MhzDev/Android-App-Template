@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="fb_appid">1666347030264852</string>
+
+    <integer name="config_min_lenght_password">8</integer>
+    <integer name="config_max_lenght_password">16</integer>
+    <integer name="config_min_lenght_name">8</integer>
+    <integer name="config_max_lenght_name">16</integer>
+</resources>

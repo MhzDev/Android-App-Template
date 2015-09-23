@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/drawer_header_height"
+    android:background="@drawable/drawer_header_background"
+    android:orientation="vertical"
+    android:layout_marginBottom="@dimen/space_16dp"
+    android:paddingLeft="@dimen/space_24dp"
+    android:paddingRight="@dimen/space_24dp"
+    android:paddingTop="@dimen/drawer_margin_top">
+
+
+    <ImageView
+        android:id="@+id/navigation_drawer_image"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:src="@drawable/user_icon" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/navigation_drawer_title"
+            android:ellipsize="end"
+            android:maxLines="1"
+            style="@style/TextTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Utente" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/navigation_drawer_subtitle"
+        style="@style/TextSubTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:maxLines="1"/>
+</LinearLayout>

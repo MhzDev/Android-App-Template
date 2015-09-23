@@ -1,0 +1,133 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:descendantFocusability="beforeDescendants"
+    android:focusableInTouchMode="true"
+    android:paddingLeft="@dimen/activity_margin"
+    android:paddingRight="@dimen/activity_margin"
+    android:paddingTop="@dimen/activity_margin_top_nostatusbar"
+    android:paddingBottom="@dimen/activity_margin">
+
+        <ImageView
+            android:id="@+id/login_logo"
+            android:layout_centerHorizontal="true"
+            android:layout_width="wrap_content"
+            android:layout_height="150dp"
+            android:src="@drawable/logo_app"
+            android:contentDescription="@string/empty"/>
+
+        <Button
+            android:id="@+id/login_facebook_button"
+            android:layout_width="match_parent"
+            android:layout_below="@id/login_logo"
+            android:layout_marginRight="@dimen/space_16dp"
+            android:layout_marginLeft="@dimen/space_16dp"
+            android:layout_marginTop="@dimen/space_16dp"
+            android:textAllCaps="false"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            style="@style/FacebookButton"
+            android:text="@string/login_view_facebook_button" />
+
+        <LinearLayout
+            android:id="@+id/or_divider"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="@dimen/space_16dp"
+            android:layout_marginBottom="@dimen/space_8dp"
+            android:layout_below="@id/login_facebook_button"
+            android:weightSum="4">
+                <View
+                    android:background="@color/b_divider"
+                    android:layout_gravity="center_vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="2"/>
+                <TextView
+                    android:text="@string/login_view_o_divider"
+                    android:textColor="@color/b_secondary_text"
+                    android:layout_width="20dp"
+                    android:gravity="center_horizontal"
+                    android:layout_height="wrap_content"/>
+                <View
+                    android:background="@color/b_divider"
+                    android:layout_gravity="center_vertical"
+                    android:layout_width="match_parent"
+                    android:layout_marginLeft="5dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="2"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/login_edit_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_below="@id/or_divider">
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                        <EditText
+                            android:id="@+id/email_edit"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/login_view_email_edit"
+                            android:inputType="textEmailAddress"/>
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                        <EditText
+                            android:id="@+id/password_edit"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/login_view_password_edit"
+                            android:inputType="textPassword"/>
+                </android.support.design.widget.TextInputLayout>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/login_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/space_16dp"
+            android:layout_marginLeft="@dimen/space_16dp"
+            android:layout_below="@+id/login_edit_container"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/space_16dp"
+            android:text="@string/login_login_button" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/login_button"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="@dimen/space_16dp"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+                <Button
+                    android:id="@+id/register_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/BorderlessButton"
+                    android:text="@string/login_register_button" />
+                <Button
+                    android:id="@+id/skip_login_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/BorderlessButton"
+                    android:text="@string/login_skip_button" />
+                <Button
+                    android:id="@+id/help_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/BorderlessButton"
+                    android:text="@string/login_forgot_password_button" />
+        </LinearLayout>
+</RelativeLayout>

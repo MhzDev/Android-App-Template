@@ -1,0 +1,43 @@
+<resources>
+    <!-- Download Fragment-->
+    <string name="download_loading_text">Sincronizzazione in corso…</string>
+
+    <!-- Recover password Fragment-->
+    <string name="recovery_title">Recupera Password</string>
+    <string name="recovery_sub_title">Inserisci la tua email per ricevere le istruzioni per ripristinare la password</string>
+    <string name="recovery_continue_button">Continua</string>
+    <string name="recovery_empy_field_message">Please insert your Email</string>
+    <string name="recovery_success_message">Recover Email sent</string>
+    <string name="recovery_email">Email</string>
+
+    <!-- Registration Fragment-->
+    <string name="register_email">Email</string>
+    <string name="register_password">Password</string>
+    <string name="register_name">Username</string>
+    <string name="register_policy">I accept the privacy policy and terms of use</string>
+    <string name="register_register_button">Sign Up</string>
+    <!-- RegistrationErrors -->
+    <string name="registration_must_accept_policy_message">You must accept the condition</string>
+    <string name="registration_error_email_empty">Email is required</string>
+    <string name="registration_error_email_not_valid">Email not valid</string>
+    <string name="registration_error_name_empty">Name is required</string>
+    <string name="registration_error_name_not_valid">Name can only contain letters and numbers</string>
+    <string formatted="false" name="registration_error_name_too_short_or_long">Name must be between %d and %d characters</string>
+    <string name="registration_password_empty">Password is required</string>
+    <string name="registration_error_password_not_valid">Password can only contain letters and numbers</string>
+    <string formatted="false" name="registration_error_password_too_short_or_long">Password must be between %d and %d characters</string>
+
+    <!-- Login Fragment-->
+    <string name="login_view_facebook_button">Login with Facebook</string>
+    <string name="login_view_o_divider">o</string>
+    <string name="login_view_email_edit">Username/Email</string>
+    <string name="login_view_password_edit">Password</string>
+    <string name="login_login_button">Login</string>
+    <string name="login_register_button">Sign Up</string>
+    <string name="login_skip_button">Skip</string>
+    <string name="login_forgot_password_button">Forgot Password?</string>
+    <string name="back_button_warning">Press Back again to exit</string>
+    <string name="login_invalid_data_message">Please insert valid data</string>
+    <string name="drawer_menu_logout">Log Out</string>
+
+</resources>

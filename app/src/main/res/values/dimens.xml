@@ -1,0 +1,47 @@
+<resources>
+    <dimen name="activity_margin">@dimen/space_16dp</dimen>
+    <dimen name="activity_margin_top_nostatusbar">34dp</dimen>
+
+    <dimen name="space_8dp">8dp</dimen>
+    <dimen name="space_16dp">16dp</dimen>
+    <dimen name="space_24dp">24dp</dimen>
+    <dimen name="space_32dp">32dp</dimen>
+    <dimen name="space_48dp">48dp</dimen>
+    <dimen name="space_56dp">56dp</dimen>
+    <dimen name="space_64dp">64dp</dimen>
+    <dimen name="space_72dp">72dp</dimen>
+    <dimen name="space_84dp">84dp</dimen>
+
+    <dimen name="text_xs">10sp</dimen>
+    <dimen name="text_s">12sp</dimen>
+    <dimen name="text_m">14sp</dimen>
+    <dimen name="text_xm">16sp</dimen>
+    <dimen name="text_l">18sp</dimen>
+    <dimen name="text_xl">24sp</dimen>
+
+    <dimen name="toolbar_top_margin">24dp</dimen>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="space_5dp">5dp</dimen>
+    <dimen name="drawer_margin_top">8dp</dimen>
+    <dimen name="drawer_header_height">135dp</dimen>
+
+
+    <dimen name="login_logo_height">0dp</dimen>
+    <dimen name="home_search_margin_top">3dp</dimen>
+
+    <dimen name="home_center_buttons_padding">@dimen/space_8dp</dimen>
+    <dimen name="path_list_item_padding">5dp</dimen>
+    <dimen name="login_button_height">@dimen/space_32dp</dimen>
+    <dimen name="path_list_item_image_dimen">55dp</dimen>
+    <dimen name="game_header_height">150dp</dimen>
+    <dimen name="game_header_player_icon_height">50dp</dimen>
+    <dimen name="login_logo_text_size">@dimen/text_l</dimen>
+
+    <dimen name="registration_logo_height">0dp</dimen>
+    <dimen name="registration_logo_margin_button">0dp</dimen>
+
+
+
+</resources>

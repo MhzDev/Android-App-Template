@@ -1,0 +1,11 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/default_background"
+    android:clickable="true">
+    <com.mhzdev.apptemplate.Controller.Login.View.RegistrationView
+        android:id="@+id/registration_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+</RelativeLayout>

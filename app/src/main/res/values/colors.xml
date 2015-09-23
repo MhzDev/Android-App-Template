@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="primary">#00477F</color>
+    <color name="primary_dark">#35424C</color>
+    <color name="accent">#008EFF</color>
+
+    <!-- Dark Text -->
+    <color name="b_divider">#1E212121</color>        <!-- Divider -->
+    <color name="b_hint">#42212121</color>           <!-- Disabled / Hint -->
+    <color name="b_secondary_text">#89212121</color> <!-- Secondary Text -->
+    <color name="b_text">#B2212121</color>           <!-- Text -->
+    <color name="b_title">@color/md_black</color>    <!-- Title -->
+
+    <!-- Light Text -->
+    <color name="w_divider">#1EFFFFFF</color>        <!-- Divider -->
+    <color name="w_hint">#42FFFFFF</color>           <!-- Disabled / Hint -->
+    <color name="w_secondary_text">#89FFFFFF</color> <!-- Secondary Text -->
+    <color name="w_text">#B2FFFFFF</color>           <!-- Text -->
+    <color name="w_title">@color/md_white</color>    <!-- Title -->
+
+    <color name="blue_facebook">#3b5998</color>
+    <color name="blue_facebook_pressed">#8b9dc3</color>
+</resources>

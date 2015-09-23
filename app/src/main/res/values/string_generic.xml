@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">MhzDevTemplate</string>
+
+    <!-- Generic -->
+    <string name="empty"/>
+    <string name="generic_title">Generic Title</string>
+    <string name="generic_subtitle">Generic Subtitle</string>
+    <string name="loading_text">Loading…</string>
+
+    <!-- Dialogs -->
+    <string name="confirmation_dialog_ok">OK</string>
+    <string name="confirmation_dialog_cancel">Cancel</string>
+
+    <!-- Connection -->
+    <string name="error_connection">Connection_error</string>
+    <string name="error_connection_off">Connection not available</string>
+
+    <!-- Titles -->
+    <string name="title_activity_home"/>
+    <string name="title_activity_settings_activity">Settings</string>
+
+</resources>

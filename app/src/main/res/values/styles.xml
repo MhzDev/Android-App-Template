@@ -1,0 +1,56 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryDark">@color/primary_dark</item>
+        <item name="colorButtonNormal">@drawable/button_color_state</item>
+        <item name="android:buttonStyle">@style/AppButtonStyle</item>
+        <item name="colorAccent">@color/primary</item>
+    </style>
+
+    <!-- Style for element that need to be dark -->
+    <style name="DarkStyleView" parent="Theme.AppCompat.NoActionBar">
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryDark">@color/primary_dark</item>
+        <item name="colorAccent">@color/primary</item>
+    </style>
+
+    <!-- Style of the default button (Made with selector for active/inactive) -->
+    <style name="AppButtonStyle" parent="Widget.AppCompat.Button">
+        <!--<item name="android:background">@color/accent</item>-->
+        <item name="colorButtonNormal">@drawable/button_color_state</item>
+        <item name="android:textColor">@drawable/button_text_state</item>
+        <item name="android:height">48dp</item>
+    </style>
+
+
+
+    <!-- ......................... -->
+    <!-- ......Other Styles ...... -->
+    <!-- ......................... -->
+
+    <!-- Text style TITLE -->
+    <style name="TextTitle">
+        <item name="android:textColor">@color/w_title</item>
+        <item name="android:textSize">@dimen/text_xl</item>
+    </style>
+    <!-- Text style SUB TITLE -->
+    <style name="TextSubTitle">
+        <item name="android:textColor">@color/w_text</item>
+        <item name="android:textSize">@dimen/text_m</item>
+    </style>
+
+    <!-- Buttons -->
+    <style name="BorderlessButton" parent="android:Widget.DeviceDefault.Light.Button.Borderless.Small">
+        <item name="android:textAllCaps">false</item>
+        <item name="android:minHeight">30dp</item>
+        <item name="android:textColor">@color/w_text</item>
+    </style>
+
+    <style name="FacebookButton">
+        <item name="android:background">@drawable/button_facebook_background</item>
+        <item name="android:textColor">@color/w_text</item>
+    </style>
+
+</resources>
