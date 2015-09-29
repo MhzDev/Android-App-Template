@@ -1,6 +1,7 @@
 <resources>
     <dimen name="activity_margin">@dimen/space_16dp</dimen>
-    <dimen name="activity_margin_top_nostatusbar">34dp</dimen>
+
+    <dimen name="activity_margin_top">16dp</dimen>
 
     <dimen name="space_8dp">8dp</dimen>
     <dimen name="space_16dp">16dp</dimen>

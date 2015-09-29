@@ -16,6 +16,7 @@
     <string name="register_name">Username</string>
     <string name="register_policy">I accept the privacy policy and terms of use</string>
     <string name="register_register_button">Sign Up</string>
+
     <!-- RegistrationErrors -->
     <string name="registration_must_accept_policy_message">You must accept the condition</string>
     <string name="registration_error_email_empty">Email is required</string>

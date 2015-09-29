@@ -9,7 +9,7 @@
         <item name="colorAccent">@color/primary</item>
     </style>
 
-    <!-- Style for element that need to be dark -->
+    <!-- Style for ELEMENT NOT LAYOUT that need to be dark -->
     <style name="DarkStyleView" parent="Theme.AppCompat.NoActionBar">
         <item name="colorPrimary">@color/primary</item>
         <item name="colorPrimaryDark">@color/primary_dark</item>

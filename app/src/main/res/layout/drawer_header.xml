@@ -2,13 +2,12 @@
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="@dimen/drawer_header_height"
+    android:layout_height="wrap_content"
     android:background="@drawable/drawer_header_background"
-    android:orientation="vertical"
-    android:layout_marginBottom="@dimen/space_16dp"
+    android:paddingBottom="@dimen/space_16dp"
     android:paddingLeft="@dimen/space_24dp"
     android:paddingRight="@dimen/space_24dp"
-    android:paddingTop="@dimen/space_16dp">
+    android:paddingTop="@dimen/activity_margin_top">
 
 
     <RelativeLayout

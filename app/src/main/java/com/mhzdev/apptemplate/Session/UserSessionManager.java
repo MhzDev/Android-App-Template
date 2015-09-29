@@ -121,8 +121,6 @@ public class UserSessionManager {
      * @param context context
      */
     public void clearUserData(Context context){
-
-
-        //TODO Clear the DataBase DB
+        //Clear the DataBase
     }
 }

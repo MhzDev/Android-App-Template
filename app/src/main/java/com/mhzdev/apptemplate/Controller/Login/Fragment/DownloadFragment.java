@@ -39,7 +39,7 @@ public class DownloadFragment extends BaseFragment {
 
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
-        //TODO download someting
+        //Download someting
 
         // ... When finished ...
         mCallback.onDownloadFinished();

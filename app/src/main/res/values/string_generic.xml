@@ -13,7 +13,7 @@
     <string name="confirmation_dialog_cancel">Cancel</string>
 
     <!-- Connection -->
-    <string name="error_connection">Connection_error</string>
+    <string name="error_connection">Connection Error</string>
     <string name="error_connection_off">Connection not available</string>
 
     <!-- Titles -->
