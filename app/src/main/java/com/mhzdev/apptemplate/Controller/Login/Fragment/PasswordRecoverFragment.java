@@ -2,14 +2,15 @@ package com.mhzdev.apptemplate.Controller.Login.Fragment;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.support.design.widget.TextInputLayout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 
-import com.mhzdev.apptemplate.R;
 import com.mhzdev.apptemplate.Controller.BaseFragment;
+import com.mhzdev.apptemplate.R;
 import com.mhzdev.apptemplate.Services.API.BaseResponse;
 import com.mhzdev.apptemplate.Services.API.Call.RecoverPasswordAPI;
 import com.mhzdev.apptemplate.Services.API.Response.RecoverPasswordResponse;
@@ -18,7 +19,6 @@ import com.mhzdev.apptemplate.Services.ApiCallback;
 import com.mhzdev.apptemplate.Services.ApiList;
 import com.mhzdev.apptemplate.Utils.CMuffin;
 import com.mhzdev.apptemplate.Utils.GenericUtils;
-import com.mhzdev.apptemplate.Utils.Muffin;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -36,6 +36,8 @@ public class PasswordRecoverFragment extends BaseFragment {
 
 
     @Bind(R.id.recovery_email_edit) EditText emailTextView;
+    @Bind(R.id.recovery_email_edit_container)
+    TextInputLayout emailTextViewContainer;
     @Bind(R.id.recovery_continue_button) Button continueButton;
 
     public PasswordRecoverFragment() {
@@ -68,7 +70,7 @@ public class PasswordRecoverFragment extends BaseFragment {
 
         //Check email
         if(!GenericUtils.isValidEmailAddress(email)){
-            CMuffin.makeLong(getActivity(), R.string.registration_error_email_not_valid);
+            emailTextViewContainer.setError(getActivity().getString(R.string.registration_error_email_not_valid));
             return;
         }
 
@@ -76,18 +78,11 @@ public class PasswordRecoverFragment extends BaseFragment {
         ApiList ApiList = ApiAdapterBuilder.getApiAdapter();
 
         RecoverPasswordAPI recoverPasswordAPI = new RecoverPasswordAPI(getActivity());
-        recoverPasswordAPI.u_email = email;
+        recoverPasswordAPI.user_email = email;
 
         ApiList.recoverPassword(recoverPasswordAPI, new RecoverPasswordCallback(getActivity(), true, true));
     }
 
-    /**
-     * Close this fragment
-     */
-    private void closeFragment() {
-        if(getActivity().getSupportFragmentManager().findFragmentByTag(PasswordRecoverFragment.TAG) != null)
-            getActivity().getSupportFragmentManager().beginTransaction().remove(PasswordRecoverFragment.this).commit();
-    }
 
     /** ****************************
      *  RecoverPassword Api - Callback
@@ -103,7 +98,8 @@ public class PasswordRecoverFragment extends BaseFragment {
             CMuffin.makeLong(getActivity(), R.string.recovery_success_message);
 
             //Close the fragment
-            closeFragment();
+            getActivity().onBackPressed();
+            //closeFragmentByTag(PasswordRecoverFragment.TAG);
         }
         @Override public void onResponseKO(BaseResponse<RecoverPasswordResponse> response, Response baseResponse) {}
         @Override public void onFail(RetrofitError error) {}

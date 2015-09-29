@@ -38,8 +38,9 @@ public class HomeActivity extends BaseActivity {
         navigationView = (NavigationView) findViewById(R.id.navigation_drawer_view);
         drawerLayout = (DrawerLayout) findViewById(R.id.navigation_drawer);
 
-        openHomeFragment();
         setUpNavDrawer();
+
+        openListFragment();
     }
 
     @Override
@@ -94,6 +95,16 @@ public class HomeActivity extends BaseActivity {
                 return true;
             }
         });
+    }
+
+
+    /**
+     * Open list Fragment
+     */
+    private void openListFragment() {
+        ListFragment homeFragment = new ListFragment();
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, homeFragment, ListFragment.TAG).commit();
+        setTitle(R.string.title_activity_home);
     }
 
     /**

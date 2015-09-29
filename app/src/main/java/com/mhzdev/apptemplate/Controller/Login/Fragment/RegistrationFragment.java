@@ -6,10 +6,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.mhzdev.apptemplate.Controller.BaseFragment;
 import com.mhzdev.apptemplate.Controller.Login.Activity.LoginActivity;
 import com.mhzdev.apptemplate.Controller.Login.View.RegistrationView;
 import com.mhzdev.apptemplate.R;
-import com.mhzdev.apptemplate.Controller.BaseFragment;
 import com.mhzdev.apptemplate.Services.API.BaseResponse;
 import com.mhzdev.apptemplate.Services.API.Call.RegistrationAPI;
 import com.mhzdev.apptemplate.Services.API.Response.RegistrationResponse;
@@ -17,7 +17,6 @@ import com.mhzdev.apptemplate.Services.ApiAdapterBuilder;
 import com.mhzdev.apptemplate.Services.ApiCallback;
 import com.mhzdev.apptemplate.Services.ApiList;
 import com.mhzdev.apptemplate.Session.UserSessionManager;
-import com.mhzdev.apptemplate.Utils.DeviceUtil;
 
 import retrofit.RetrofitError;
 import retrofit.client.Response;
@@ -62,15 +61,22 @@ public class RegistrationFragment extends BaseFragment {
         ApiList ApiList = ApiAdapterBuilder.getApiAdapter();
 
         RegistrationAPI registrationAPI = new RegistrationAPI(getActivity());
-        registrationAPI.u_email = email;
-        registrationAPI.u_password = password;
-        registrationAPI.u_name = name;
+        registrationAPI.user_email = email;
+        registrationAPI.user_password = password;
+        registrationAPI.username = name;
 
         UserSessionManager.getInstance(getActivity()).saveUserData(name);
 
         ApiList.register(registrationAPI, new RegistrationCallback(getActivity(), true, true));
     }
 
+
+    /**
+     * INTERFACE - Callback used by {@link LoginActivity}
+     */
+    public interface RegistrationFragmentListener {
+        void onUserRegistered();
+    }
 
     /** ***************************
      *  Registration Api - Callback
@@ -88,7 +94,7 @@ public class RegistrationFragment extends BaseFragment {
             String newToken = response.response.token;
             UserSessionManager.getInstance(getActivity()).setToken(newToken);
 
-            String userName = response.response.u_name;
+            String userName = response.response.user_name;
             UserSessionManager.getInstance(getActivity()).saveUserData(userName);
 
             mCallback.onUserRegistered();
@@ -107,12 +113,5 @@ public class RegistrationFragment extends BaseFragment {
         public void onRegistrationRequest(String email, String password, String name) {
             doRegistration(email, password, name);
         }
-    }
-
-    /**
-     * INTERFACE - Callback used by {@link LoginActivity}
-     */
-    public interface RegistrationFragmentListener {
-        void onUserRegistered();
     }
 }

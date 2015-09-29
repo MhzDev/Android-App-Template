@@ -21,4 +21,6 @@
 
     <color name="blue_facebook">#3b5998</color>
     <color name="blue_facebook_pressed">#8b9dc3</color>
+
+    <color name="grey_divider">#CCC</color>
 </resources>

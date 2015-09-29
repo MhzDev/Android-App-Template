@@ -23,10 +23,10 @@
     <string name="registration_error_email_not_valid">Email not valid</string>
     <string name="registration_error_name_empty">Name is required</string>
     <string name="registration_error_name_not_valid">Name can only contain letters and numbers</string>
-    <string formatted="false" name="registration_error_name_too_short_or_long">Name must be between %d and %d characters</string>
+    <string name="registration_error_name_too_short_or_long" formatted="false">Name must be between %d and %d characters</string>
     <string name="registration_password_empty">Password is required</string>
     <string name="registration_error_password_not_valid">Password can only contain letters and numbers</string>
-    <string formatted="false" name="registration_error_password_too_short_or_long">Password must be between %d and %d characters</string>
+    <string name="registration_error_password_too_short_or_long" formatted="false">Password must be between %d and %d characters</string>
 
     <!-- Login Fragment-->
     <string name="login_view_facebook_button">Login with Facebook</string>
@@ -42,4 +42,8 @@
     <string name="drawer_menu_logout">Log Out</string>
     <string name="error_loading_image">Error loading image</string>
 
+
+    <string name="loading_error_label_1">Errore caricamento,</string>
+    <string name="loading_error_label_2">Tocca per riprovare</string>
+    <string name="error_no_item">Nessun percorso trovato</string>
 </resources>

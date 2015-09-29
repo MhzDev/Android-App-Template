@@ -17,7 +17,7 @@
     <string name="error_connection_off">Connection not available</string>
 
     <!-- Titles -->
-    <string name="title_activity_home"/>
+    <string name="title_activity_home">Home</string>
     <string name="title_activity_settings_activity">Settings</string>
 
 </resources>

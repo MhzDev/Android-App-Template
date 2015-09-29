@@ -16,7 +16,6 @@ import com.mhzdev.apptemplate.Controller.Login.Fragment.PasswordRecoverFragment;
 import com.mhzdev.apptemplate.Controller.Login.Fragment.RegistrationFragment;
 import com.mhzdev.apptemplate.Controller.Login.Fragment.SplashFragment;
 import com.mhzdev.apptemplate.Controller.Tutorial.TutorialActivity;
-import com.mhzdev.apptemplate.Model.FacebookUser;
 import com.mhzdev.apptemplate.R;
 import com.mhzdev.apptemplate.Services.API.BaseResponse;
 import com.mhzdev.apptemplate.Services.API.Call.AutoLoginAPI;
@@ -65,10 +64,12 @@ public class LoginActivity extends BaseActivity {
 
         //If user has a token try the autoLogin Else open the Login page
         if (UserSessionManager.getInstance(this).isLogged()) {
+            Log.d(LOG_TAG, "Try autoLogin");
             tryAutoLogin();
             return;
         }
 
+        Log.d(LOG_TAG, "Not logged, open login page");
         openLoginPageFragment();
     }
 

@@ -11,7 +11,7 @@ public class BaseTokenedAPI {
     private String lang;
     private String token;
 
-    protected BaseTokenedAPI(Context context){
+    public BaseTokenedAPI(Context context) {
         lang = UserSessionManager.getInstance(context).getLang();
         token = UserSessionManager.getInstance(context).getToken();
     }

@@ -1,7 +1,5 @@
 package com.mhzdev.apptemplate.Controller.Login.Fragment;
 
-import android.app.Activity;
-import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -17,12 +15,11 @@ import com.facebook.GraphRequest;
 import com.facebook.GraphResponse;
 import com.facebook.login.LoginManager;
 import com.facebook.login.LoginResult;
-import com.google.android.gms.common.ConnectionResult;
+import com.mhzdev.apptemplate.Controller.BaseFragment;
 import com.mhzdev.apptemplate.Controller.Login.Activity.LoginActivity;
+import com.mhzdev.apptemplate.Controller.Login.View.LoginView;
 import com.mhzdev.apptemplate.Model.FacebookUser;
 import com.mhzdev.apptemplate.R;
-import com.mhzdev.apptemplate.Controller.BaseFragment;
-import com.mhzdev.apptemplate.Controller.Login.View.LoginView;
 import com.mhzdev.apptemplate.Services.API.BaseResponse;
 import com.mhzdev.apptemplate.Services.API.Call.FbAccessAPI;
 import com.mhzdev.apptemplate.Services.API.Call.LoginAPI;
@@ -32,9 +29,8 @@ import com.mhzdev.apptemplate.Services.ApiAdapterBuilder;
 import com.mhzdev.apptemplate.Services.ApiCallback;
 import com.mhzdev.apptemplate.Services.ApiList;
 import com.mhzdev.apptemplate.Session.UserSessionManager;
-import com.mhzdev.apptemplate.Utils.ConnectionUtil;
 import com.mhzdev.apptemplate.Utils.CMuffin;
-import com.mhzdev.apptemplate.Utils.Muffin;
+import com.mhzdev.apptemplate.Utils.ConnectionUtil;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -121,8 +117,8 @@ public class LoginFragment extends BaseFragment {
         ApiList ApiList = ApiAdapterBuilder.getApiAdapter();
 
         LoginAPI loginAPI = new LoginAPI(getActivity());
-        loginAPI.u_email = email;
-        loginAPI.u_password =  password;
+        loginAPI.user_email = email;
+        loginAPI.user_password = password;
 
         ApiList.login(loginAPI, new LoginCallback(getActivity(), true, true));
     }
@@ -160,14 +156,27 @@ public class LoginFragment extends BaseFragment {
         ApiList ApiList = ApiAdapterBuilder.getApiAdapter();
 
         FbAccessAPI fbAccessAPI = new FbAccessAPI(getActivity());
-        fbAccessAPI.u_email = facebookUser.getEmail();
-        fbAccessAPI.u_name = facebookUser.getEmail();
+        fbAccessAPI.user_email = facebookUser.getEmail();
+        fbAccessAPI.username = facebookUser.getEmail();
         fbAccessAPI.token = facebookUser.getToken();
         fbAccessAPI.user_id = facebookUser.getFbUserId();
 
         ApiList.fbAccess(fbAccessAPI, new FbAccessCallback(getActivity(), true, true));
     }
 
+
+    /**
+     * INTERFACE - Callback used by {@link LoginActivity}
+     */
+    public interface LoginFragmentListener {
+        void onUserLogged();
+
+        void onRequestRegistration();
+
+        void onForgetPassword();
+
+        void onSkipLogin();
+    }
 
     /** ****************************
      *  Login Api - Callback
@@ -185,7 +194,7 @@ public class LoginFragment extends BaseFragment {
             String newToken = response.response.token;
             UserSessionManager.getInstance(getActivity()).setToken(newToken);
 
-            String userName = response.response.u_name;
+            String userName = response.response.user_name;
             UserSessionManager.getInstance(getActivity()).saveUserData(userName);
 
             //Successful token verification
@@ -197,7 +206,6 @@ public class LoginFragment extends BaseFragment {
         public void onFail(RetrofitError error) {}
     }
 
-
     /** ****************************
      *  Facebook register Api - Callback
      * *****************************
@@ -208,7 +216,7 @@ public class LoginFragment extends BaseFragment {
         }
         @Override
         public void onSuccess(BaseResponse<FbAccessResponse> response, Response baseResponse) {
-            String name = response.response.u_name;
+            String name = response.response.user_name;
             String token = response.response.token;
 
             //Save data & Token
@@ -296,15 +304,5 @@ public class LoginFragment extends BaseFragment {
         public void onForgetPasswordClick() {
             mCallback.onForgetPassword();
         }
-    }
-
-    /**
-     * INTERFACE - Callback used by {@link LoginActivity}
-     */
-    public interface LoginFragmentListener {
-        void onUserLogged();
-        void onRequestRegistration();
-        void onForgetPassword();
-        void onSkipLogin();
     }
 }

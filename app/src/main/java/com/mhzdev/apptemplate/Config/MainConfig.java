@@ -1,8 +1,8 @@
 package com.mhzdev.apptemplate.Config;
 
 public class MainConfig {
-    public static String MAIN_URL = "http://main_url";
-    public static String API_URL = MAIN_URL + "/api/1.0";
+    public static String MAIN_URL = "http://mhzdev.com";
+    public static String API_URL = MAIN_URL + "/api/apptemplate";
 
     public static String SHARED_PREFERENCES = "SHARED_PREFERENCES";
 
