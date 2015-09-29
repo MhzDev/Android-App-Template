@@ -8,12 +8,16 @@ import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AccelerateDecelerateInterpolator;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.mhzdev.apptemplate.R;
 import com.mhzdev.apptemplate.Config.MainConfig;
 import com.mhzdev.apptemplate.Controller.BaseFragment;
+
+import io.codetail.animation.SupportAnimator;
+import io.codetail.animation.ViewAnimationUtils;
 
 public class SplashFragment extends BaseFragment {
 
@@ -22,6 +26,7 @@ public class SplashFragment extends BaseFragment {
     public static final String TAG = "SplashFragment";
     @SuppressWarnings("unused")
     public final String LOG_TAG = "SplashFragment";
+    private View view;
 
     public SplashFragment() {
     }
@@ -42,9 +47,12 @@ public class SplashFragment extends BaseFragment {
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        this.view = view;
 
         ProgressBar progressBar = (ProgressBar) view.findViewById(R.id.loading_animation);
-        progressBar.getIndeterminateDrawable().setColorFilter(Color.RED, PorterDuff.Mode.SRC_IN);
+        progressBar.getIndeterminateDrawable().setColorFilter(
+                getResources().getColor(R.color.md_white),
+                PorterDuff.Mode.SRC_IN);
 
         String versionName = "";
         PackageInfo pInfo;
@@ -69,7 +77,7 @@ public class SplashFragment extends BaseFragment {
 
         //Close now
         if (splashElapsedTime > MainConfig.SPLASH_DURATION) {
-            closeFragmentByTag(SplashFragment.TAG);
+            closeSplash();
         } else {
             //Wait the remaining time
             Handler mHandler = new Handler();
@@ -79,12 +87,37 @@ public class SplashFragment extends BaseFragment {
                     if(getActivity() == null)
                         return;
 
-                    closeFragmentByTag(SplashFragment.TAG);
+                    closeSplash();
                 }
             };
             long remainingTime = MainConfig.SPLASH_DURATION - splashElapsedTime;
             mHandler.postDelayed(mRunnable, remainingTime);
         }
+    }
+
+    public void closeSplash(){
+        View revealLayout = view.findViewById(R.id.reveal_layout);
+        revealLayout.setVisibility(View.VISIBLE);
+
+        // get the center for the clipping circle
+        int cx = (revealLayout.getLeft() + revealLayout.getRight()) / 2;
+        int cy = (revealLayout.getTop() + revealLayout.getBottom()) / 2;
+
+        // get the final radius for the clipping circle
+        int finalRadius = Math.max(revealLayout.getWidth(), revealLayout.getHeight());
+
+        SupportAnimator animator = ViewAnimationUtils.createCircularReveal(revealLayout, cx, cy, 0, finalRadius);
+        animator.setInterpolator(new AccelerateDecelerateInterpolator());
+        animator.setDuration(1500);
+        animator.start();
+
+        final Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                closeFragmentByTag(SplashFragment.TAG);
+            }
+        }, 1500);
     }
 
     public void forceClose(){

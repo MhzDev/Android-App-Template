@@ -1,11 +1,11 @@
 <resources>
     <!-- Download Fragment-->
-    <string name="download_loading_text">Sincronizzazione in corso…</string>
+    <string name="download_loading_text">Synchronization…</string>
 
     <!-- Recover password Fragment-->
-    <string name="recovery_title">Recupera Password</string>
-    <string name="recovery_sub_title">Inserisci la tua email per ricevere le istruzioni per ripristinare la password</string>
-    <string name="recovery_continue_button">Continua</string>
+    <string name="recovery_title">Recover Password</string>
+    <string name="recovery_sub_title">Insert here your email to recover your password</string>
+    <string name="recovery_continue_button">Continue</string>
     <string name="recovery_empy_field_message">Please insert your Email</string>
     <string name="recovery_success_message">Recover Email sent</string>
     <string name="recovery_email">Email</string>
@@ -39,5 +39,6 @@
     <string name="back_button_warning">Press Back again to exit</string>
     <string name="login_invalid_data_message">Please insert valid data</string>
     <string name="drawer_menu_logout">Log Out</string>
+    <string name="error_loading_image">Error loading image</string>
 
 </resources>

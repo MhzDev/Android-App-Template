@@ -45,12 +45,12 @@
     <style name="BorderlessButton" parent="android:Widget.DeviceDefault.Light.Button.Borderless.Small">
         <item name="android:textAllCaps">false</item>
         <item name="android:minHeight">30dp</item>
-        <item name="android:textColor">@color/w_text</item>
+        <item name="android:textColor">@color/w_title</item>
     </style>
 
     <style name="FacebookButton">
         <item name="android:background">@drawable/button_facebook_background</item>
-        <item name="android:textColor">@color/w_text</item>
+        <item name="android:textColor">@color/w_title</item>
     </style>
 
 </resources>

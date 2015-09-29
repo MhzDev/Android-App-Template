@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     package="com.mhzdev.apptemplate" >
 
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
@@ -10,24 +9,16 @@
     <uses-permission android:name="com.android.vending.BILLING" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
 
-    <!--<provider android:authorities="com.facebook.app.FacebookContentProvider{APP_ID}"-->
-    <!--android:name="com.facebook.FacebookContentProvider"-->
-    <!--android:exported="true"/>-->
+    <!-- TODO Replace the {APP_ID} -->
+    <provider android:authorities="com.facebook.app.FacebookContentProvider__APP_ID"
+        android:name="com.facebook.FacebookContentProvider"
+        android:exported="true"/>
 
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme"
-        tools:replace="android:icon" >
-
-        <receiver
-            android:name=".common.DownloadReceiver"
-            android:enabled="true" >
-            <intent-filter>
-                <action android:name="android.intent.action.DOWNLOAD_COMPLETE" />
-            </intent-filter>
-        </receiver>
+        android:theme="@style/AppTheme" >
 
         <provider
             android:name="com.facebook.FacebookContentProvider"

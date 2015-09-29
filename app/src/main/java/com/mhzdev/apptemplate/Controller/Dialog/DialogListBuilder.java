@@ -5,9 +5,7 @@ import android.content.DialogInterface;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AlertDialog;
 
-/**
- * Created by Michele Stefanelli (MhzDev) on 14/09/2015.
- */
+
 public class DialogListBuilder {
     public static AlertDialog showDialog(
             Context context, int titleRes, int messageRes, String[] dataList, final boolean cancelable, @NonNull final DialogCallback callback) {

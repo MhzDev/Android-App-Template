@@ -18,17 +18,18 @@
             android:src="@drawable/logo_app"
             android:contentDescription="@string/empty"/>
 
+
         <Button
             android:id="@+id/login_facebook_button"
             android:layout_width="match_parent"
             android:layout_below="@id/login_logo"
-            android:layout_marginRight="@dimen/space_16dp"
-            android:layout_marginLeft="@dimen/space_16dp"
+            android:layout_marginRight="@dimen/space_8dp"
+            android:layout_marginLeft="@dimen/space_8dp"
             android:layout_marginTop="@dimen/space_16dp"
+            android:layout_centerHorizontal="true"
+            android:backgroundTint="@color/blue_facebook"
             android:textAllCaps="false"
             android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            style="@style/FacebookButton"
             android:text="@string/login_view_facebook_button" />
 
         <LinearLayout
