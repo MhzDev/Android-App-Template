@@ -1,4 +1,4 @@
-package com.mhzdev.apptemplate.Controller.Login.Activity;
+package com.mhzdev.apptemplate.Controller.Login;
 
 import android.content.Context;
 import android.content.Intent;

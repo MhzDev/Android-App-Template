@@ -2,18 +2,22 @@
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="@drawable/drawer_header_background"
-    android:paddingBottom="@dimen/space_16dp"
-    android:paddingLeft="@dimen/space_24dp"
-    android:paddingRight="@dimen/space_24dp"
-    android:paddingTop="@dimen/activity_margin_top">
+    android:layout_height="155dp">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/drawer_header_background" />
 
 
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerVertical="true">
+        android:paddingBottom="@dimen/space_16dp"
+        android:paddingLeft="@dimen/space_16dp"
+        android:paddingRight="@dimen/space_16dp"
+        android:paddingTop="@dimen/activity_margin_top">
         <ImageView
             android:id="@+id/navigation_drawer_image"
             android:layout_width="70dp"
@@ -24,25 +28,25 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignBaseline="@id/navigation_drawer_image"
-            android:layout_marginRight="@dimen/space_8dp"
-            android:layout_marginLeft="@dimen/space_8dp"
+            android:layout_marginLeft="@dimen/space_16dp"
+            android:layout_marginRight="@dimen/space_16dp"
             android:layout_toRightOf="@id/navigation_drawer_image"
             android:orientation="vertical">
             <TextView
                 android:id="@+id/navigation_drawer_title"
-                android:ellipsize="end"
-                android:maxLines="1"
                 style="@style/TextTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
                 android:text="@string/generic_title" />
             <TextView
                 android:id="@+id/navigation_drawer_subtitle"
                 style="@style/TextSubTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/generic_subtitle"
-                android:maxLines="1"/>
+                android:maxLines="1"
+                android:text="@string/generic_subtitle" />
         </LinearLayout>
     </RelativeLayout>
 

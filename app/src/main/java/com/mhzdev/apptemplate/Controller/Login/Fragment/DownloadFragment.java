@@ -6,9 +6,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.mhzdev.apptemplate.Controller.Login.Activity.LoginActivity;
-import com.mhzdev.apptemplate.R;
 import com.mhzdev.apptemplate.Controller.BaseFragment;
+import com.mhzdev.apptemplate.Controller.Login.LoginActivity;
+import com.mhzdev.apptemplate.R;
 
 
 public class DownloadFragment extends BaseFragment {

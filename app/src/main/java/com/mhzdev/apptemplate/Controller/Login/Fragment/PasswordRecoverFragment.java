@@ -18,7 +18,7 @@ import com.mhzdev.apptemplate.Services.ApiAdapterBuilder;
 import com.mhzdev.apptemplate.Services.ApiCallback;
 import com.mhzdev.apptemplate.Services.ApiList;
 import com.mhzdev.apptemplate.Utils.CMuffin;
-import com.mhzdev.apptemplate.Utils.GenericUtils;
+import com.mhzdev.apptemplate.Utils.VerificationUtils;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -69,7 +69,7 @@ public class PasswordRecoverFragment extends BaseFragment {
         String email = emailTextView.getText().toString();
 
         //Check email
-        if(!GenericUtils.isValidEmailAddress(email)){
+        if (!VerificationUtils.isValidEmailAddress(email)) {
             emailTextViewContainer.setError(getActivity().getString(R.string.registration_error_email_not_valid));
             return;
         }

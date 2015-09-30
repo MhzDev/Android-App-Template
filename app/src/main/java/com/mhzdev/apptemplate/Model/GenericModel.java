@@ -1,9 +1,8 @@
-package com.mhzdev.apptemplate.Controller.Home;
+package com.mhzdev.apptemplate.Model;
 
-/**
- * Created by Michele Stefanelli (MhzDev) on 29/09/2015.
- */
-public class GenericModel {
+import java.io.Serializable;
+
+public class GenericModel implements Serializable {
     private Long id;
     private String title;
     private String subtitle;

@@ -1,4 +1,4 @@
-package com.mhzdev.apptemplate.Controller.Home;
+package com.mhzdev.apptemplate.Controller.Home.Fragment.List;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -7,6 +7,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
 import com.mhzdev.apptemplate.R;
+import com.mhzdev.apptemplate.Utils.ImageUtil;
 
 
 public class SimpleDividerItemDecoration extends RecyclerView.ItemDecoration {
@@ -18,7 +19,7 @@ public class SimpleDividerItemDecoration extends RecyclerView.ItemDecoration {
 
     @Override
     public void onDrawOver(Canvas c, RecyclerView parent, RecyclerView.State state) {
-        int left = parent.getPaddingLeft();
+        int left = parent.getPaddingLeft() + ImageUtil.dpToPx(72); //Margin left of 72 dp as material guidelines
         int right = parent.getWidth() - parent.getPaddingRight();
 
         int childCount = parent.getChildCount();

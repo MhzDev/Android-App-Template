@@ -10,8 +10,7 @@ import android.widget.RelativeLayout;
 import com.mhzdev.apptemplate.Controller.Login.Fragment.LoginFragment;
 import com.mhzdev.apptemplate.R;
 import com.mhzdev.apptemplate.Utils.CMuffin;
-import com.mhzdev.apptemplate.Utils.GenericUtils;
-import com.mhzdev.apptemplate.Utils.Muffin;
+import com.mhzdev.apptemplate.Utils.VerificationUtils;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -105,7 +104,7 @@ public class LoginView extends RelativeLayout {
             return;
         }
         //Email invalid
-        if(!GenericUtils.isValidEmailAddress(email)){
+        if (!VerificationUtils.isValidEmailAddress(email)) {
             CMuffin.makeLong(getContext(), R.string.login_invalid_data_message);
             return;
         }

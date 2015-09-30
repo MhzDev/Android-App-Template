@@ -16,7 +16,7 @@ import com.facebook.GraphResponse;
 import com.facebook.login.LoginManager;
 import com.facebook.login.LoginResult;
 import com.mhzdev.apptemplate.Controller.BaseFragment;
-import com.mhzdev.apptemplate.Controller.Login.Activity.LoginActivity;
+import com.mhzdev.apptemplate.Controller.Login.LoginActivity;
 import com.mhzdev.apptemplate.Controller.Login.View.LoginView;
 import com.mhzdev.apptemplate.Model.FacebookUser;
 import com.mhzdev.apptemplate.R;

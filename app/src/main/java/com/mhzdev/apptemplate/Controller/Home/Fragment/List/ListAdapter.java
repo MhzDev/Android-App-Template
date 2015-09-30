@@ -1,4 +1,4 @@
-package com.mhzdev.apptemplate.Controller.Home;
+package com.mhzdev.apptemplate.Controller.Home.Fragment.List;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.mhzdev.apptemplate.Model.GenericModel;
 import com.mhzdev.apptemplate.R;
 import com.squareup.picasso.Picasso;
 
@@ -56,7 +57,7 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
         holder.rootView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mListener.onItemClick(position, itemId);
+                mListener.onItemClick(position);
             }
         });
 
@@ -78,7 +79,7 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
     }
 
     public interface RoutesListAdapterListener {
-        void onItemClick(int position, Long id);
+        void onItemClick(int position);
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {

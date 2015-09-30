@@ -7,12 +7,11 @@ import android.support.v7.app.AlertDialog;
 import android.util.Log;
 
 import com.mhzdev.apptemplate.Config.MainConfig;
-import com.mhzdev.apptemplate.R;
-import com.mhzdev.apptemplate.Controller.Login.Activity.LoginActivity;
-import com.mhzdev.apptemplate.Services.API.BaseResponse;
 import com.mhzdev.apptemplate.Controller.Dialog.LoadingDialog;
+import com.mhzdev.apptemplate.Controller.Login.LoginActivity;
+import com.mhzdev.apptemplate.R;
+import com.mhzdev.apptemplate.Services.API.BaseResponse;
 import com.mhzdev.apptemplate.Utils.CMuffin;
-import com.mhzdev.apptemplate.Utils.Muffin;
 
 import retrofit.Callback;
 import retrofit.RetrofitError;

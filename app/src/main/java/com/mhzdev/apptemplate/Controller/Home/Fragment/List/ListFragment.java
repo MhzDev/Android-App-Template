@@ -1,6 +1,7 @@
-package com.mhzdev.apptemplate.Controller.Home;
+package com.mhzdev.apptemplate.Controller.Home.Fragment.List;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
@@ -11,6 +12,9 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
 import com.mhzdev.apptemplate.Controller.BaseFragment;
+import com.mhzdev.apptemplate.Controller.Detail.DetailActivity;
+import com.mhzdev.apptemplate.Controller.Home.HomeActivity;
+import com.mhzdev.apptemplate.Model.GenericModel;
 import com.mhzdev.apptemplate.R;
 import com.mhzdev.apptemplate.Services.API.BaseResponse;
 import com.mhzdev.apptemplate.Services.API.Call.GetDataListAPI;
@@ -44,6 +48,11 @@ public class ListFragment extends BaseFragment {
 
     //Flags
     private boolean swipeLayoutOn;
+    private ListFragmentListener mListener;
+
+    //Model
+    private List<GenericModel> dataList = new ArrayList<>();
+    private RecyclerView listView;
 
     public ListFragment() {
     }
@@ -89,7 +98,7 @@ public class ListFragment extends BaseFragment {
 
     private void initRecycleView(View view) {
         //Set the recycle view
-        final RecyclerView listView = (RecyclerView) view.findViewById(R.id.recycle_view);
+        listView = (RecyclerView) view.findViewById(R.id.recycle_view);
         listView.setHasFixedSize(true);
         final RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getContext());
         listView.setLayoutManager(mLayoutManager);
@@ -115,8 +124,8 @@ public class ListFragment extends BaseFragment {
         List<GenericModel> modelList = new ArrayList<>();
         mAdapter = new ListAdapter(getContext(), modelList, new ListAdapter.RoutesListAdapterListener() {
             @Override
-            public void onItemClick(int position, Long id) {
-                onListItemClick(position, id);
+            public void onItemClick(int position) {
+                onListItemClick(position);
             }
         });
         listView.setAdapter(mAdapter);
@@ -126,10 +135,24 @@ public class ListFragment extends BaseFragment {
      * When an item is clicked
      *
      * @param position position of the item clicked
-     * @param id       id of the item clicked (Obtained by the model
      */
-    private void onListItemClick(int position, Long id) {
-        openDetailActivity(position, id);
+    private void onListItemClick(int position) {
+        GenericModel model = dataList.get(position);
+
+//        View listTitleView = listView.getChildAt(position).findViewById(R.id.title);
+//        View listSubtitleView = listView.getChildAt(position).findViewById(R.id.subtitle);
+//        Activity activity = getActivity();
+//        Intent detailIntent = new Intent(getActivity(), DetailActivity.class);
+//        detailIntent.putExtra(DetailActivity.EXTRA_MODEL, model);
+//        ActivityOptions options =
+//                ActivityOptions.makeSceneTransitionAnimation(activity,
+//                Pair.create(listTitleView, "title"),
+//                Pair.create(listSubtitleView, "subtitle"));
+//        getActivity().startActivity(detailIntent, options.toBundle());
+
+        Intent detailIntent = new Intent(getActivity(), DetailActivity.class);
+        detailIntent.putExtra(DetailActivity.EXTRA_MODEL, model);
+        getActivity().startActivity(detailIntent);
     }
 
     /**
@@ -184,10 +207,6 @@ public class ListFragment extends BaseFragment {
         mAdapter.notifyDataSetChanged();
     }
 
-    private void openDetailActivity(int position, Long id) {
-        //Todo open the detail activity
-    }
-
     /**
      * Enable or disable the swipe to reload feature
      *
@@ -212,6 +231,17 @@ public class ListFragment extends BaseFragment {
         });
     }
 
+    public void setListener(ListFragmentListener ListFragmentListener) {
+        mListener = ListFragmentListener;
+    }
+
+
+    /**
+     * INTERFACE - Callback used by {@link HomeActivity}
+     */
+    public interface ListFragmentListener {
+    }
+
     /**
      * ***************************
      * GetDataList Api - Callback
@@ -227,6 +257,8 @@ public class ListFragment extends BaseFragment {
             //Disable the error view
             setSwipeLoadingIndicator(false);
             errorLoadingMessage.setVisibility(View.GONE);
+
+            dataList = response.response.dataList;
 
             //Update the list
             updatePathsList(response.response.dataList);

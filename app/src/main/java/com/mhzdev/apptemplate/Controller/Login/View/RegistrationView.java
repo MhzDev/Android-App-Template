@@ -5,18 +5,15 @@ import android.content.res.Resources;
 import android.support.design.widget.TextInputLayout;
 import android.util.AttributeSet;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
-import android.widget.Spinner;
 
 import com.mhzdev.apptemplate.Controller.Login.Fragment.RegistrationFragment;
 import com.mhzdev.apptemplate.R;
 import com.mhzdev.apptemplate.Utils.CMuffin;
-import com.mhzdev.apptemplate.Utils.GenericUtils;
-import com.mhzdev.apptemplate.Utils.Muffin;
+import com.mhzdev.apptemplate.Utils.VerificationUtils;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -101,7 +98,7 @@ public class RegistrationView extends RelativeLayout {
             return;
         }
         //Email invalid
-        if(!GenericUtils.isValidEmailAddress(email)){
+        if (!VerificationUtils.isValidEmailAddress(email)) {
             emailInputLayout.setError(resources.getString(R.string.registration_error_email_not_valid));
             return;
         }
@@ -114,7 +111,7 @@ public class RegistrationView extends RelativeLayout {
             return;
         }
         //Name not valid (Only char & num)
-        if(!GenericUtils.hasOnlyCharAndNumbers(name)){
+        if (!VerificationUtils.hasOnlyCharAndNumbers(name)) {
             nameInputLayout.setError(resources.getString(R.string.registration_error_name_not_valid));
             return;
         }
@@ -139,7 +136,7 @@ public class RegistrationView extends RelativeLayout {
             return;
         }
         //Password not valid (Only char & num)
-        if(!GenericUtils.hasOnlyCharAndNumbers(password)){
+        if (!VerificationUtils.hasOnlyCharAndNumbers(password)) {
             passwordInputLayout.setError(resources.getString(R.string.registration_error_password_not_valid));
             return;
         }

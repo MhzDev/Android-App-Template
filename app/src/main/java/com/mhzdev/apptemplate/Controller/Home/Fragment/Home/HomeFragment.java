@@ -1,4 +1,4 @@
-package com.mhzdev.apptemplate.Controller.Home;
+package com.mhzdev.apptemplate.Controller.Home.Fragment.Home;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -6,7 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.mhzdev.apptemplate.Controller.BaseFragment;
-import com.mhzdev.apptemplate.Controller.Login.Fragment.RegistrationFragment;
+import com.mhzdev.apptemplate.Controller.Home.HomeActivity;
 import com.mhzdev.apptemplate.R;
 
 

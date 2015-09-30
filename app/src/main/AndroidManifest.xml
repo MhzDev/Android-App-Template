@@ -37,7 +37,7 @@
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
 
         <activity
-            android:name=".Controller.Login.Activity.LoginActivity"
+            android:name=".Controller.Login.LoginActivity"
             android:configChanges="orientation"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
@@ -54,7 +54,13 @@
             android:label="@string/title_activity_home"
             android:launchMode="singleInstance"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="stateHidden">
+            android:windowSoftInputMode="stateHidden"></activity>
+
+        <activity
+            android:name=".Controller.Detail.DetailActivity"
+            android:configChanges="orientation"
+            android:label="@string/title_activity_detail_activity"
+            android:screenOrientation="portrait">
         </activity>
 
         <activity
