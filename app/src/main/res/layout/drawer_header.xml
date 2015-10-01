@@ -39,14 +39,14 @@
                 android:layout_height="wrap_content"
                 android:ellipsize="end"
                 android:maxLines="1"
-                android:text="@string/generic_title" />
+                android:text="@string/drawer_title" />
             <TextView
                 android:id="@+id/navigation_drawer_subtitle"
                 style="@style/TextSubTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:maxLines="1"
-                android:text="@string/generic_subtitle" />
+                android:text="@string/drawer_subtitle" />
         </LinearLayout>
     </RelativeLayout>
 

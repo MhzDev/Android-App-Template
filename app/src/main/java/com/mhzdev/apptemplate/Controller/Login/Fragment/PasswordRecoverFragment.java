@@ -6,6 +6,7 @@ import android.support.design.widget.TextInputLayout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -49,6 +50,7 @@ public class PasswordRecoverFragment extends BaseFragment {
         return inflater.inflate(R.layout.fragment_recover_password, container, false);
     }
 
+
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
@@ -83,6 +85,10 @@ public class PasswordRecoverFragment extends BaseFragment {
         ApiList.recoverPassword(recoverPasswordAPI, new RecoverPasswordCallback(getActivity(), true, true));
     }
 
+    private void closeKeyboard() {
+        InputMethodManager inputManager = (InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
+        inputManager.hideSoftInputFromWindow(getActivity().getCurrentFocus().getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
+    }
 
     /** ****************************
      *  RecoverPassword Api - Callback
@@ -97,9 +103,10 @@ public class PasswordRecoverFragment extends BaseFragment {
             //Notify success
             CMuffin.makeLong(getActivity(), R.string.recovery_success_message);
 
+            closeKeyboard();
+
             //Close the fragment
             getActivity().onBackPressed();
-            //closeFragmentByTag(PasswordRecoverFragment.TAG);
         }
         @Override public void onResponseKO(BaseResponse<RecoverPasswordResponse> response, Response baseResponse) {}
         @Override public void onFail(RetrofitError error) {}

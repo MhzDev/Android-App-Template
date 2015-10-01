@@ -105,4 +105,11 @@
         Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
     </string>
     <string name="github">Github</string>
+    <string name="navigation_item_1">Navigation Item</string>
+    <string name="navigation_item_2">Another one</string>
+    <string name="navigation_item_3">Something else</string>
+    <string name="navigation_item_4">Another item</string>
+    <string name="navigation_item_5">Last item</string>
+    <string name="drawer_title">Username</string>
+    <string name="drawer_subtitle">username@email.com</string>
 </resources>

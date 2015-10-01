@@ -10,7 +10,6 @@ import com.mhzdev.apptemplate.Controller.BaseActivity;
 import com.mhzdev.apptemplate.Model.GenericModel;
 import com.mhzdev.apptemplate.R;
 
-import butterknife.ButterKnife;
 
 public class DetailActivity extends BaseActivity {
     public static final String EXTRA_MODEL = "MODEL";
@@ -19,18 +18,21 @@ public class DetailActivity extends BaseActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
-        ButterKnife.bind(this);
 
         Bundle extras = getIntent().getExtras();
         GenericModel model = (GenericModel) extras.getSerializable(EXTRA_MODEL);
 
+        init(model);
+
+
+    }
+
+    private void init(GenericModel model) {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         if (model != null) {
             toolbar.setTitle(model.getTitle());
         }
         setSupportActionBar(toolbar);
-
-        getActionBar().setDisplayHomeAsUpEnabled(true);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -40,7 +42,5 @@ public class DetailActivity extends BaseActivity {
                         .setAction("Action", null).show();
             }
         });
-
-
     }
 }

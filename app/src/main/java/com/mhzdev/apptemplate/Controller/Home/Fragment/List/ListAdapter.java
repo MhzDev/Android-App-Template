@@ -67,7 +67,7 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
         if (!currentItem.getImage_url().equals(""))
             Picasso.with(context)
                     .load(currentItem.getImage_url())
-                    .placeholder(R.mipmap.ic_launcher)
+                    .placeholder(R.drawable.logo_app)
                     .into(holder.mImageView);
 
     }
