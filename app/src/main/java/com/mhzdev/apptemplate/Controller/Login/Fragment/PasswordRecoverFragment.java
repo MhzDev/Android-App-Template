@@ -40,6 +40,7 @@ public class PasswordRecoverFragment extends BaseFragment {
     @Bind(R.id.recovery_email_edit_container)
     TextInputLayout emailTextViewContainer;
     @Bind(R.id.recovery_continue_button) Button continueButton;
+    private PasswordRecoverListener mListener;
 
     public PasswordRecoverFragment() {
     }
@@ -62,6 +63,10 @@ public class PasswordRecoverFragment extends BaseFragment {
                 callRecoverPasswordApi();
             }
         });
+    }
+
+    public void setmListener(PasswordRecoverListener passwordRecoverListener) {
+        this.mListener = passwordRecoverListener;
     }
 
     /**
@@ -106,9 +111,47 @@ public class PasswordRecoverFragment extends BaseFragment {
             closeKeyboard();
 
             //Close the fragment
-            getActivity().onBackPressed();
+            closeFragmentByTag(TAG);
+
+            mListener.onEmailSent();
         }
         @Override public void onResponseKO(BaseResponse<RecoverPasswordResponse> response, Response baseResponse) {}
         @Override public void onFail(RetrofitError error) {}
+    }
+
+    /**
+     * ***************************
+     * RecoverPassword Api - Callback
+     * *****************************
+     */
+    private class RecoverPasswordCallback extends ApiCallback<RecoverPasswordResponse> {
+        public RecoverPasswordCallback(Context context, boolean requestLoading, boolean notifyErrors) {
+            super(context, requestLoading, notifyErrors);
+        }
+
+        @Override
+        public void onSuccess(BaseResponse<RecoverPasswordResponse> response, Response baseResponse) {
+            //Notify success
+            CMuffin.makeLong(getActivity(), R.string.recovery_success_message);
+
+            closeKeyboard();
+
+            //Close the fragment
+            closeFragmentByTag(TAG);
+
+            mListener.onEmailSent();
+        }
+
+        @Override
+        public void onResponseKO(BaseResponse<RecoverPasswordResponse> response, Response baseResponse) {
+        }
+
+        @Override
+        public void onFail(RetrofitError error) {
+        }
+    }
+
+    public interface PasswordRecoverListener {
+        void onEmailSent();
     }
 }

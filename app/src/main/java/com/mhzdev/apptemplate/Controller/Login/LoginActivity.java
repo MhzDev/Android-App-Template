@@ -179,6 +179,12 @@ public class LoginActivity extends BaseActivity {
      */
     private void openPasswordRecoverFragment() {
         PasswordRecoverFragment passwordRecoverFragment = new PasswordRecoverFragment();
+        passwordRecoverFragment.setmListener(new PasswordRecoverFragment.PasswordRecoverListener() {
+            @Override
+            public void onEmailSent() {
+                openLoginPageFragment();
+            }
+        });
         getSupportFragmentManager().beginTransaction()
                 .setCustomAnimations(R.anim.activity_open_enter, R.anim.activity_open_exit,
                         R.anim.activity_close_enter, R.anim.activity_close_exit)
