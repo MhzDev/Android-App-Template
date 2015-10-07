@@ -10,16 +10,4 @@ public class MainConfig {
 
     public static String ERROR_INVALID_TOKEN = "101";
 
-    /**
-     * TODO LIST
-     * - Sostituire icone con generiche
-     * - Inserire codice commentato per cambiare icona giocatore e testo
-     * - Inserire esempio chiamate e risposte
-     *
-     * * Next *
-     * - Inserire liste e adapter di esempio
-     * - Inserire swipe layout con messaggio vuoto di esempio
-     * - Inserire configurazione per saltare le chiamate e ottenere success
-     *
-     */
 }
