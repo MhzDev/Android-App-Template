@@ -1,6 +1,8 @@
 # Android App Template
 A simple template, which shows the use of some components of an Android App
 
+<img src="https://github.com/MhzDev/Android-App-Template/blob/master/Art/splash_gif.gif" width="200">
+
 ##Purpose
 - Start with a good part of the app already made (Login, Registration, Networking, SharedPreferences...)
 - Study the implementations of some elements and technologies of an app
@@ -39,3 +41,8 @@ Feel free to make a pull requesto to:
 - Add other element/page/tecnologies (Following the style of the app)
 - Refactor a part of the code
 - Fix or improve the template
+
+##Screenshot
+<img src="https://github.com/MhzDev/Android-App-Template/blob/master/Art/login.png" width="200">
+<img src="https://github.com/MhzDev/Android-App-Template/blob/master/Art/drawer.png" width="200">
+<img src="https://github.com/MhzDev/Android-App-Template/blob/master/Art/detail.png" width="200">
