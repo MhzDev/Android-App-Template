@@ -95,6 +95,10 @@ public class PasswordRecoverFragment extends BaseFragment {
         inputManager.hideSoftInputFromWindow(getActivity().getCurrentFocus().getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
     }
 
+    public interface PasswordRecoverListener {
+        void onEmailSent();
+    }
+
     /** ****************************
      *  RecoverPassword Api - Callback
      * *****************************
@@ -115,32 +119,6 @@ public class PasswordRecoverFragment extends BaseFragment {
 
             mListener.onEmailSent();
         }
-        @Override public void onResponseKO(BaseResponse<RecoverPasswordResponse> response, Response baseResponse) {}
-        @Override public void onFail(RetrofitError error) {}
-    }
-
-    /**
-     * ***************************
-     * RecoverPassword Api - Callback
-     * *****************************
-     */
-    private class RecoverPasswordCallback extends ApiCallback<RecoverPasswordResponse> {
-        public RecoverPasswordCallback(Context context, boolean requestLoading, boolean notifyErrors) {
-            super(context, requestLoading, notifyErrors);
-        }
-
-        @Override
-        public void onSuccess(BaseResponse<RecoverPasswordResponse> response, Response baseResponse) {
-            //Notify success
-            CMuffin.makeLong(getActivity(), R.string.recovery_success_message);
-
-            closeKeyboard();
-
-            //Close the fragment
-            closeFragmentByTag(TAG);
-
-            mListener.onEmailSent();
-        }
 
         @Override
         public void onResponseKO(BaseResponse<RecoverPasswordResponse> response, Response baseResponse) {
@@ -149,9 +127,5 @@ public class PasswordRecoverFragment extends BaseFragment {
         @Override
         public void onFail(RetrofitError error) {
         }
-    }
-
-    public interface PasswordRecoverListener {
-        void onEmailSent();
     }
 }
