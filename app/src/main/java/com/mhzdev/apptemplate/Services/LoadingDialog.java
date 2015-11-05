@@ -1,19 +1,12 @@
-package com.mhzdev.apptemplate.Controller.Dialog;
+package com.mhzdev.apptemplate.Services;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.graphics.drawable.ColorDrawable;
-import android.support.annotation.NonNull;
 import android.support.v7.app.AlertDialog;
-import android.view.View;
-import android.view.WindowManager;
-import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
-
 import com.mhzdev.apptemplate.R;
-import com.rey.material.widget.ProgressView;
 
 /**
  * Generic loading dialog
